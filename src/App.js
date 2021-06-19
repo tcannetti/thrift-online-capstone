@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { commerce } from "./lib/commerce";
-import { Products, Navbar, Cart, CheckoutForm } from "./components"
+import { Products, Navbar, Cart, Checkout } from "./components"
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 const App = () => {
@@ -65,7 +65,7 @@ const handleAddToCart = async (productId, quantity) => {
             />
           </Route>
           <Route exact path="/checkout">
-            <CheckoutForm />
+            <Checkout />
           </Route>
         </Switch>
       </div>
