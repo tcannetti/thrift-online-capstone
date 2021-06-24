@@ -41,6 +41,8 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
     nextStep();
   };
 
+  
+
   let Confirmation = () => (order.customer ? (
     <>
       <div>
@@ -58,9 +60,14 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
   ));
 
   if (error) {
+    function getRandomNumberBetween(min,max){
+      return Math.floor(Math.random()*(max-min+1)+min);
+    }
+
+
     Confirmation = () => (
       <>
-        <Typography variant="h5">Thank you for your purchase! <br /> Order# 1000349AB </Typography>
+        <Typography variant="h5">Thank you for your purchase! <br /> Order# {getRandomNumberBetween(1,234)} </Typography>
         {/* <Typography variant="h5">Error: {error}</Typography> */}
         <br />
         <Button component={Link} variant="outlined" type="button" to="/">Back to home</Button>
